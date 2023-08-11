@@ -12,12 +12,13 @@ const starContainerStyle = {
 
 
 
-export default function StarRating({ maxLength = 5 , color = '#fcc419' , size = 48 }) {
+export default function StarRating({ maxLength = 5 , color = '#fcc419' , size = 48 , onSetRating}) {
   const [rating, setRating] = useState(0);
   const [tempRating, setTempRating] = useState(0);
 
   function handleRating(rate) {
     setRating(rate);
+    onSetRating(rate);
   }
   const textStyle = {
     margin: "0",
